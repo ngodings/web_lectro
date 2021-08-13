@@ -12,7 +12,7 @@ class _NavBarState extends State<NavBar> {
   List<bool> selected = [true, false, false, false, false];
 
   void select(int n) {
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
       if (i != n) {
         selected[i] = false;
       } else {
@@ -71,6 +71,15 @@ class _NavBarState extends State<NavBar> {
             });
           },
         ),
+        // NavBarItem(
+        //   active: selected[5],
+        //   icon: FontAwesomeIcons.signOutAlt,
+        //   touched: () {
+        //     setState(() {
+        //       select(5);
+        //     });
+        //   },
+        // ),
       ]),
     );
   }

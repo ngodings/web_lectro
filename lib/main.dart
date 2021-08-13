@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:web_lectro/Dashboard/Dashboard.dart';
 import 'package:web_lectro/register.dart';
 
 import 'NavigationBar/NavigationBar.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: Stack(children: [
               NavigationBar(),
+              Dashboard(),
             ])));
   }
 }

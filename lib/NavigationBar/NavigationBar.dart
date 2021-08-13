@@ -18,7 +18,7 @@ class _NavigationBarState extends State<NavigationBar> {
       child: Container(
         height: MediaQuery.of(context).size.height,
         width: 100.0,
-        color: Color(0xff333951),
+        color: Color(0xFF1B5E20),
         child: Stack(children: [
           CompanyName(),
           Align(
