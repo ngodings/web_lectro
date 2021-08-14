@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:web_lectro/Dashboard/src/ItemStatisticsCards.dart';
+import 'package:web_lectro/Dashboard/src/Package.dart';
 import 'package:web_lectro/Dashboard/src/ProgressCard.dart';
+import 'package:web_lectro/Dashboard/src/SubHeader.dart';
 import 'package:web_lectro/Dashboard/src/Tabs.dart';
 
 class Dashboard extends StatelessWidget {
@@ -21,7 +24,7 @@ class Dashboard extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(left: 30.0, top: 25.0, bottom: 10.0),
               child: Text(
-                'Ongoing Package',
+                'Lectro Package',
                 style: GoogleFonts.quicksand(
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
@@ -42,13 +45,46 @@ class Dashboard extends StatelessWidget {
                 children: [
                   ProgressCard(
                       color: Color(0xFF1B5E20),
-                      progressIndicatorColor: Colors.tealAccent,
+                      progressIndicatorColor: Colors.redAccent,
                       percentComplete: '34%',
                       projectName: 'Micro',
-                      icon: FontAwesomeIcons.moon)
+                      icon: FontAwesomeIcons.microchip),
+                  ProgressCard(
+                      color: Color(0xFF1B5E20),
+                      progressIndicatorColor: Colors.blueAccent,
+                      percentComplete: '50%',
+                      projectName: 'Lamp',
+                      icon: FontAwesomeIcons.lightbulb),
+                  ProgressCard(
+                      color: Color(0xFF1B5E20),
+                      progressIndicatorColor: Colors.yellowAccent,
+                      percentComplete: '85%',
+                      projectName: 'Battery',
+                      icon: FontAwesomeIcons.batteryFull)
                 ],
               ),
-            )
+            ),
+            SubHeader(
+              title: 'New Package Offer',
+            ),
+            Package(
+              color: Colors.blue,
+              et: '8 month',
+              members: '90 user',
+              packageName: 'Smart Battery',
+              price: '90 dolars',
+            ),
+            Package(
+              color: Colors.blue,
+              et: '1 month',
+              members: '30 user',
+              packageName: 'Fast Charging Battery',
+              price: '30 dolars',
+            ),
+            SubHeader(
+              title: 'Package Statistics',
+            ),
+            ItemStatisticsCards(),
           ],
         ),
       ),
