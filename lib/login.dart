@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:web_lectro/main.dart';
+import 'package:web_lectro/register.dart';
 
-import 'login.dart';
-
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
-
+class LoginPage extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,45 +54,18 @@ class RegisterPage extends StatelessWidget {
                     height: 30,
                   ),
                   Text(
-                    'Register here!',
+                    'Hi there!',
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    'Please complete this from before using this app',
+                    'Please Login first before use this application',
                     style: TextStyle(fontSize: 15, color: Colors.grey),
                   ),
                   SizedBox(
                     height: 20,
-                  ),
-                  Container(
-                    width: 300,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Name',
-                        suffixIcon: Icon(FontAwesomeIcons.user, size: 17),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 300,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Address',
-                        suffixIcon: Icon(FontAwesomeIcons.home, size: 17),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 300,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Phone',
-                        suffixIcon: Icon(FontAwesomeIcons.phone, size: 17),
-                      ),
-                    ),
                   ),
                   Container(
                     width: 300,
@@ -114,14 +86,29 @@ class RegisterPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  InkWell(
+                    onTap: () {},
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(20, 20, 40, 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Forget Password',
+                            style: TextStyle(color: Colors.blueAccent[400]),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
+                        MaterialPageRoute(builder: (context) => MyApp()),
                       );
                     },
                     child: GestureDetector(
@@ -141,7 +128,7 @@ class RegisterPage extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.all(12.0),
                           child: Text(
-                            'Register',
+                            'Login',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -152,7 +139,50 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    'or login using Social Media',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
                     height: 20,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.facebookF,
+                          color: Colors.greenAccent[900],
+                        ),
+                        Icon(
+                          FontAwesomeIcons.twitch,
+                          color: Colors.greenAccent[900],
+                        ),
+                        Icon(
+                          FontAwesomeIcons.solidEnvelope,
+                          color: Colors.greenAccent[900],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterPage()),
+                      );
+                    },
+                    child: Text(
+                      'Join with us now!',
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   SizedBox(
                     height: 20,

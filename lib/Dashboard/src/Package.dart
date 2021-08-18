@@ -46,9 +46,10 @@ class _PackageState extends State<Package> {
             boxShadow: hovered
                 ? [
                     BoxShadow(
-                        color: Colors.black12,
-                        spreadRadius: 0.0,
-                        blurRadius: 13.0)
+                      color: Colors.black12,
+                      blurRadius: 13.0,
+                      spreadRadius: 0.0,
+                    ),
                   ]
                 : []),
         child: Column(
@@ -83,44 +84,31 @@ class _PackageState extends State<Package> {
                       Text(
                         widget.packageName,
                         style: GoogleFonts.quicksand(
-                            fontWeight: FontWeight.bold, fontSize: 12.0
-                            //18.44
-                            ),
-                      )
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.0,
+                        ),
+                      ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 120.0),
-                          child: Text(widget.members,
-                              style: GoogleFonts.quicksand(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 11.0,
-                                color: Colors.black45,
-                              ))),
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 120.0),
-                          child: Text(widget.et,
-                              style: GoogleFonts.quicksand(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 11.0,
-                                color: Colors.black45,
-                              ))),
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 120.0),
-                          child: Text(widget.price,
-                              style: GoogleFonts.quicksand(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 11.0,
-                                color: Colors.black45,
-                              )))
-                    ],
-                  )
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.start,
+                  //   children: [
+                  //     Padding(
+                  //       padding: EdgeInsets.symmetric(horizontal: 200.0),
+                  //       child: Text(
+                  //         widget.price,
+                  //         style: GoogleFonts.quicksand(
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 11.0,
+                  //           color: Colors.black87,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:web_lectro/NavigationBar/src/NavBarItem.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -12,7 +15,7 @@ class _NavBarState extends State<NavBar> {
   List<bool> selected = [true, false, false, false, false];
 
   void select(int n) {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
       if (i != n) {
         selected[i] = false;
       } else {
@@ -25,113 +28,55 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     return Container(
       height: 350.0,
-      child: Column(children: [
-        NavBarItem(
-          active: selected[0],
-          icon: FontAwesomeIcons.home,
-          touched: () {
-            setState(() {
-              select(0);
-            });
-          },
-        ),
-        NavBarItem(
-          active: selected[1],
-          icon: FontAwesomeIcons.microchip,
-          touched: () {
-            setState(() {
-              select(1);
-            });
-          },
-        ),
-        NavBarItem(
-          active: selected[2],
-          icon: FontAwesomeIcons.server,
-          touched: () {
-            setState(() {
-              select(2);
-            });
-          },
-        ),
-        NavBarItem(
-          active: selected[3],
-          icon: FontAwesomeIcons.book,
-          touched: () {
-            setState(() {
-              select(3);
-            });
-          },
-        ),
-        NavBarItem(
-          active: selected[4],
-          icon: FontAwesomeIcons.user,
-          touched: () {
-            setState(() {
-              select(4);
-            });
-          },
-        ),
-        // NavBarItem(
-        //   active: selected[5],
-        //   icon: FontAwesomeIcons.signOutAlt,
-        //   touched: () {
-        //     setState(() {
-        //       select(5);
-        //     });
-        //   },
-        // ),
-      ]),
-    );
-  }
-}
-
-class NavBarItem extends StatefulWidget {
-  final IconData icon;
-  final Function touched;
-  final bool active;
-
-  NavBarItem({required this.active, required this.icon, required this.touched});
-
-  @override
-  _NavBarItemState createState() => _NavBarItemState();
-}
-
-class _NavBarItemState extends State<NavBarItem> {
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-          onTap: () {
-            widget.touched();
-          },
-          splashColor: Colors.white,
-          hoverColor: Colors.white12,
-          child: Container(
-              padding: EdgeInsets.symmetric(vertical: 3.0),
-              child: Row(
-                children: [
-                  AnimatedContainer(
-                    duration: Duration(milliseconds: 475),
-                    height: 35.0,
-                    width: 5.0,
-                    decoration: BoxDecoration(
-                        color:
-                            widget.active ? Colors.white : Colors.transparent,
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(10.0),
-                            bottomRight: Radius.circular(10.0))),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 30.0),
-                    child: Icon(
-                      widget.icon,
-                      color: widget.active ? Colors.white : Colors.white54,
-                      size: 19.0,
-                    ),
-                  )
-                ],
-              ))),
+      child: Column(
+        children: [
+          NavBarItem(
+            icon: FontAwesomeIcons.home,
+            active: selected[0],
+            touched: () {
+              setState(() {
+                select(0);
+              });
+            },
+          ),
+          NavBarItem(
+            icon: FontAwesomeIcons.microchip,
+            active: selected[1],
+            touched: () {
+              setState(() {
+                select(1);
+              });
+            },
+          ),
+          NavBarItem(
+            icon: FontAwesomeIcons.server,
+            active: selected[2],
+            touched: () {
+              setState(() {
+                select(2);
+              });
+            },
+          ),
+          NavBarItem(
+            icon: FontAwesomeIcons.memory,
+            active: selected[3],
+            touched: () {
+              setState(() {
+                select(3);
+              });
+            },
+          ),
+          NavBarItem(
+            icon: FontAwesomeIcons.cog,
+            active: selected[4],
+            touched: () {
+              setState(() {
+                select(4);
+              });
+            },
+          ),
+        ],
+      ),
     );
   }
 }
